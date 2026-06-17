@@ -1,7 +1,10 @@
 local opt = vim.opt
 local cmd = vim.cmd
+local g = vim.g
 
 -- General
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 opt.clipboard = "unnamedplus"
 opt.mouse = "a"
 

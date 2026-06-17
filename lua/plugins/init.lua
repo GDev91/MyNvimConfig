@@ -14,8 +14,10 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/ibhagwan/fzf-lua" },
 	{ src = "https://github.com/sindrets/diffview.nvim" },
+	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
+	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 
-	--UI quality of life
+	--UI improvements
 	{ src = "https://github.com/nvim-mini/mini.icons" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/malewicz1337/oil-git.nvim" },
@@ -43,6 +45,17 @@ require("oil").setup({
 		is_always_hidden = function(name, _)
 			return name == ".git"
 		end,
+	},
+	float = {
+		padding = 2,
+		max_width = 0,
+		max_height = 0,
+		border = "rounded", -- Options: "single", "double", "shadow", "rounded", or table of chars
+		win_options = {
+			winblend = 1, -- Set to 0 to remove transparency if you find it ugly
+			-- Optional: Highlight groups to style normal float background and borders
+			winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+		},
 	},
 })
 
@@ -78,3 +91,5 @@ local lspconfig = require("lspconfig")
 
 require("oil-git").setup()
 require("oil-git-status").setup()
+require("nvim-tree").setup()
+require("toggleterm").setup()
