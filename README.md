@@ -153,7 +153,8 @@ Potential future improvements:
 
 ## License
 
-No license is currently specified for this repository.
+MIT License
+Copyright (c) 2026 GDev91
 
 ## Use of AI
 The use of AI for this project is permitted, however all code or content (like this readme) that has been AI generated must be declared and explained.
