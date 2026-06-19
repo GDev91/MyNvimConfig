@@ -16,6 +16,8 @@ vim.pack.add({
 	{ src = "https://github.com/sindrets/diffview.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-tree.lua" },
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
+	{ src = "https://github.com/akinsho/bufferline.nvim" },
+	{ src = "https://github.com/goolord/alpha-nvim" },
 
 	--UI improvements
 	{ src = "https://github.com/nvim-mini/mini.icons" },
@@ -93,3 +95,23 @@ require("oil-git").setup()
 require("oil-git-status").setup()
 require("nvim-tree").setup()
 require("toggleterm").setup()
+require("bufferline").setup({})
+
+local status_alpha, alpha = pcall(require, "alpha")
+local status_theme, dashboard = pcall(require, "alpha.themes.dashboard")
+
+dashboard.section.header.val = {
+	[[   _____           _______         .__           ]],
+	[[  /     \  ___.__. \      \ ___  __|__|  _____   ]],
+	[[ /  \ /  \<   |  | /   |   \\  \/ /|  | /     \  ]],
+	[[/    Y    \\___  |/    |    \\   / |  ||  Y Y  \ ]],
+	[[\____|__  // ____|\____|__  / \_/  |__||__|_|  / ]],
+	[[        \/ \/             \/                 \/  ]],
+	[[                                                 ]],
+}
+
+if status_alpha and status_theme then
+	alpha.setup(dashboard.config)
+else
+	vim.notify("Failed to load alpha-nvim or its theme", vim.log.levels.ERROR)
+end
