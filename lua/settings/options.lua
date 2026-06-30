@@ -43,7 +43,7 @@ opt.undofile = true
 opt.swapfile = false
 
 -- Theme Setup
-cmd.colorscheme("turboc-pascal")
+cmd.colorscheme("quiet")
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
