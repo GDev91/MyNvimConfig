@@ -91,7 +91,6 @@ require("code_runner").setup({
 })
 local lspconfig = require("lspconfig")
 
-require("oil-git").setup()
 require("oil-git-status").setup()
 require("nvim-tree").setup()
 require("toggleterm").setup()
